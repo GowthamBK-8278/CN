@@ -1,0 +1,30 @@
+
+import java.net.*;
+import java.io.*;
+
+class TCPServer {
+    public static void main(String args[]) throws Exception {
+
+        ServerSocket server = new ServerSocket(5000);
+
+        System.out.println("Server waiting for client...");
+
+        Socket socket = server.accept();
+
+        System.out.println("Client connected.");
+
+        BufferedReader input = new BufferedReader(
+            new InputStreamReader(socket.getInputStream()));
+
+        String message;
+
+        while ((message = input.readLine()) != null) {
+            System.out.println(message);
+        }
+
+        System.out.println("Connection closed.");
+
+        socket.close();
+        server.close();
+    }
+}
