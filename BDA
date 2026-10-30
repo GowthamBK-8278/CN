@@ -1,0 +1,106 @@
+IMPORTING AND EXPORTING DATA FROM VARIOUS DATABASES
+AIM:
+To study the importing and exporting of data from different databases using MySQL, Hive and Sqoop.
+PROCEDURE:
+SQOOP is used to transfer data between MySQL and Hadoop (HDFS).
+- Importing: Transferring data from MySQL to Hive/HDFS.
+- Exporting: Transferring data from Hive/HDFS to MySQL.
+A. Importing Data from MySQL to HDFS
+Step 1: Login into MySQL.
+mysql -u root -p
+
+
+Step 2: Create a database, table and insert data.
+CREATE DATABASE student;
+
+USE student;
+
+CREATE TABLE details (
+    id INT,
+    name VARCHAR(30),
+    age INT
+);
+
+INSERT INTO details VALUES
+(1,'Arun',20),
+(2,'Bala',21),
+(3,'Ravi',22);
+
+SELECT * FROM details;
+
+
+Step 3: Create a table in Hive.
+CREATE DATABASE student;
+
+USE student;
+
+CREATE TABLE details (
+    id INT,
+    name STRING,
+    age INT
+);
+
+
+Step 4: Run the Sqoop import command.
+sqoop import \
+--connect jdbc:mysql://localhost:3306/student \
+--username root \
+--password cloudera \
+--table details \
+--hive-import \
+--hive-table student.details \
+--m 1
+
+
+Step 5: Check whether the data is imported successfully.
+SELECT * FROM student.details;
+
+
+B. Exporting Data from HDFS to MySQL
+Step 1: Create a database and table in Hive.
+CREATE DATABASE company;
+
+USE company;
+
+CREATE TABLE employee (
+    id INT,
+    name STRING,
+    salary INT
+);
+
+
+Step 2: Insert data into the Hive table.
+INSERT INTO employee VALUES
+(1,'Arun',15000),
+(2,'Bala',20000),
+(3,'Ravi',25000);
+
+
+Step 3: Create a database and table in MySQL.
+CREATE DATABASE company;
+
+USE company;
+
+CREATE TABLE employee (
+    id INT,
+    name VARCHAR(30),
+    salary INT
+);
+
+
+Step 4: Run the Sqoop export command.
+sqoop export \
+--connect jdbc:mysql://localhost:3306/company \
+--username root \
+--password cloudera \
+--table employee \
+--export-dir /user/hive/warehouse/company.db/employee \
+--m 1
+
+
+Step 5: Check whether the data is exported successfully.
+SELECT * FROM employee;
+
+
+RESULT:
+Thus, the importing and exporting of data between MySQL, Hive and HDFS using Sqoop was studied and successfully verified.
