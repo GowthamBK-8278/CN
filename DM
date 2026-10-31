@@ -1,0 +1,60 @@
+Experiment 2: Keyword Research Using Google Keyword Planner
+
+AIM:
+
+To perform keyword research for a skincare hospital website using Google Keyword Planner based on search volume and competition.
+
+PROCEDURE:
+
+1. Open Google and search for Google Keyword Planner.
+
+
+2. Open the Google Ads website and sign in using a Google account.
+
+
+3. Select the Keyword Planner option under the Tools section.
+
+
+4. Click Discover New Keywords.
+
+
+5. Enter skincare-related keywords such as:
+
+Skin Care Hospital
+
+Best Dermatologist
+
+Skin Treatment
+
+Acne Treatment
+
+Hair Treatment
+
+Laser Skin Treatment
+
+
+
+6. Select the target location and language.
+
+
+7. Click Get Results to view the keyword details.
+
+
+8. Check the following details:
+
+Search Volume: Number of people searching for a keyword.
+
+Competition: Level of competition between advertisers for that keyword.
+
+
+
+9. Compare the keywords and select keywords with high search volume and low competition.
+
+
+10. Use the selected keywords in the website content, headings and meta descriptions.
+
+
+
+RESULT:
+
+Thus, keyword research was successfully performed for a skincare hospital website using Google Keyword Planner. Keywords were identified and analysed based on search volume and competition to improve website visibility and search engine ranking.
